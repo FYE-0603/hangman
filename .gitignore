@@ -1,0 +1,12 @@
+# Go build artifacts
+/hangman
+/hangman.exe
+*.test
+*.out
+
+# GoLand / IntelliJ
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
