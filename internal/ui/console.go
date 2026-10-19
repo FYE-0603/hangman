@@ -64,6 +64,7 @@ func readLetter(reader *bufio.Reader) (rune, error) {
 // drawState prints the current hangman picture, masked word, and attempts left.
 func drawState(g *game.Game) {
 	fmt.Println(HangmanArt(g.AttemptsLeft()))
-	fmt.Printf(" Word: %s\n", g.MaskedWord())
-	fmt.Printf(" Attempts left: %d/%d\n\n", g.AttemptsLeft(), g.MaxAttempts())
+	fmt.Printf("  Word: %s\n", g.MaskedWord())
+	fmt.Printf("  Attempts left: %d/%d\n\n", g.AttemptsLeft(), g.MaxAttempts())
+	fmt.Printf("  Guessed: %s\n\n", g.GuessedLetters())
 }

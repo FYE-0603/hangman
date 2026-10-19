@@ -1,6 +1,7 @@
 package game
 
 import (
+	"sort"
 	"strings"
 	"unicode"
 )
@@ -98,3 +99,13 @@ func (g *Game) MaxAttempts() int { return g.maxAttempts }
 
 // Word returns the hidden word. Only use this after the game is over.
 func (g *Game) Word() string { return g.word }
+
+// GuessedLetters returns all guessed letters, sorted alphabetically.
+func (g *Game) GuessedLetters() []string {
+	letters := make([]string, 0, len(g.guessed))
+	for r := range g.guessed {
+		letters = append(letters, string(r))
+	}
+	sort.Strings(letters)
+	return letters
+}
